@@ -1,0 +1,6 @@
+#[wasm_bindgen]
+pub fn confidential_inference_wasi(sealed_input: Vec<u8>) -> u32 {
+    wasi_tee::decrypt_and_run(|pixels| {
+        enclave_matmul(pixels)  // Never escapes WASM TEE
+    })
+}
