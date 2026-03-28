@@ -190,3 +190,12 @@ if threat_detected {
 } else {
     bugs.push("hyze_antivirus_npu_v2.sv:signature miss".to_string());
 }
+
+// TEST 14: Serverless Cold-Start
+let serverless_resp: serde_json::Value = reqwest::post(format!("{}/serverless_v3", args.api_url))
+    .json(&serde_json::json!({"model": "mnist", "input": base64_pixels}))
+    .send().await?.json().await?;
+
+let cold_start_us = serverless_resp["cold_start_us"].as_u64().unwrap_or(u64::MAX);
+assert!(cold_start_us < 10, "Cold-start >10μs");  // SRAM win!
+println!("✅ [14/14] Serverless: {}μs cold-start", cold_start_us);
