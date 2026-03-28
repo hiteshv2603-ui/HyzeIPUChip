@@ -1,0 +1,19 @@
+[package]
+name = "hyze-ipu-host"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Host driver
+usb1 = "0.4"      # FPGA USB (Tang Primer)
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+
+# Model compiler
+onnx = "0.2"      # Parse Jupyter ONNX
+rust-hdl = "0.5"  # HDL generation
+
+[build-dependencies]
+vergen = "8"      # Build info
