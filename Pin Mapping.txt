@@ -1,0 +1,5 @@
+Tang Primer B2B → FPGA Pins:
+J1 Pin 1-30:  FPGA IO[0:29]
+J1 Pin 31-60: DDR3 DQ[0:29]
+J2 Pin 1-30:  PCIe TX/RX[0:15]
+J2 Pin 31-60: Power + Clock
