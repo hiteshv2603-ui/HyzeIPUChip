@@ -2,4 +2,4 @@
 2. JLCPCB.com → "Add Gerber"
 3. SMT Assembly → Upload bom.csv + CPL
 4. Stackup: 6-layer 1.6mm
-5. **$27 shipped** (5 boards, Ohio 5 days)
+5. **$27 shipped** (5 boards, 5 days)
