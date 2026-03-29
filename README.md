@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/SVYQoHL.png" alt="Hyze Logo" width="255">
 </p>
 
-# Hyze IPU: Heterogeneous AI Superchip
+# Hyze IPU: Heterogeneous AI Accelerator Chip
 
 **Hyze IPU** is a cutting-edge, heterogeneous AI acceleration platform that integrates **CPU, GPU, and a custom IPU (Intelligence Processing Unit)** into a unified architecture. Designed for ultra-low latency inference, massive context windows, and hardware-enforced security, Hyze IPU targets the next generation of enterprise AI workloads.
 
