@@ -1,0 +1,38 @@
+# 6-Layer Stackup (JLCPCB Standard)
+(kicad_pcb (version 20231120)
+
+  (general
+    (thickness 1.6)
+    (layers 6)
+  )
+
+  # Net Classes
+  (net_class "PCIe_HighSpeed" (clearance 0.15) (trace_width 0.25)
+    (via_dia 0.6) (via_drill 0.3) (u_via_dia 0.3) (u_via_drill 0.15)
+    (members "PCIe_TX* PCIe_RX*")
+  )
+
+  (net_class "DDR3" (clearance 0.12) (trace_width 0.15)
+    (members "DDR_DQ* DDR_CLK* DDR_DQS*")
+  )
+
+  (net_class "Power" (clearance 0.5) (trace_width 1.0)
+    (members "VCC_1V0 VCC_3V3 GND")
+  )
+
+  # Tang Primer Connectors (14mm spacing)
+  (fp_line (start 50 50) (end 64 50) (layer Edge.Cuts) (width 0.1))
+  
+  (module Connector_B2B:SiPeed_Tang25K_J1 (layer B.Cu)
+    (at 50 50)
+    (pad 1 thru_hole rect 1.2 1.2 (offset 0 0) (layers *.Cu *.Mask) (net 1))
+    # ... 60 pads (2.54mm grid)
+  )
+
+  # DDR3 Routing (Fly-by topology)
+  (segment (start 80.5 40) (end 82 42) (width 0.15) (layer In1.Cu) (net DDR_CLK_P))
+  (segment (start 80.5 41) (end 82 43) (width 0.15) (layer In1.Cu) (net DDR_CLK_N))
+
+  # PCIe Diff Pairs (100Ω)
+  (via (at 15 65) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net PCIe_TX0_P))
+)
